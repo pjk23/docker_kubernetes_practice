@@ -1,0 +1,61 @@
+LAST SEEN   TYPE      REASON           OBJECT                 MESSAGE
+43m         Normal    Scheduled        pod/secret-nginx-pod   Successfully assigned default/secret-nginx-pod to node-2
+43m         Normal    Pulling          pod/secret-nginx-pod   Pulling image "nginx"
+43m         Normal    Created          pod/secret-nginx-pod   Created container mycontainer
+43m         Normal    Started          pod/secret-nginx-pod   Started container mycontainer
+43m         Normal    Pulled           pod/secret-nginx-pod   Successfully pulled image "nginx" in 508.615618ms
+37m         Normal    Scheduled        pod/secret-test-pod    Successfully assigned default/secret-test-pod to node-1
+37m         Normal    Pulled           pod/secret-test-pod    Successfully pulled image "nginx" in 535.826249ms
+37m         Normal    Pulling          pod/secret-test-pod    Pulling image "nginx"
+37m         Normal    Started          pod/secret-test-pod    Started container test-container
+37m         Normal    Created          pod/secret-test-pod    Created container test-container
+37m         Normal    Pulled           pod/secret-test-pod    Successfully pulled image "nginx" in 475.072885ms
+37m         Warning   BackOff          pod/secret-test-pod    Back-off restarting failed container
+37m         Normal    Pulled           pod/secret-test-pod    Successfully pulled image "nginx" in 501.384033ms
+37m         Normal    Pulled           pod/secret-test-pod    Successfully pulled image "nginx" in 520.954361ms
+34m         Normal    Scheduled        pod/nginx              Successfully assigned default/nginx to node-1
+33m         Normal    Pulling          pod/nginx              Pulling image "nginx"
+34m         Normal    Pulled           pod/nginx              Successfully pulled image "nginx" in 928.642703ms
+33m         Warning   Failed           pod/nginx              Error: secret "my-secret1" not found
+34m         Normal    Pulled           pod/nginx              Successfully pulled image "nginx" in 678.755207ms
+33m         Normal    Pulled           pod/nginx              Successfully pulled image "nginx" in 529.656182ms
+33m         Normal    Pulled           pod/nginx              Successfully pulled image "nginx" in 541.843221ms
+33m         Normal    Pulled           pod/nginx              Successfully pulled image "nginx" in 750.78751ms
+33m         Normal    Pulled           pod/nginx              Successfully pulled image "nginx" in 1.397869391s
+33m         Normal    Killing          pod/secret-nginx-pod   Stopping container mycontainer
+32m         Normal    Scheduled        pod/nginx              Successfully assigned default/nginx to node-2
+31m         Normal    Pulling          pod/nginx              Pulling image "nginx"
+31m         Normal    SandboxChanged   pod/nginx              Pod sandbox changed, it will be killed and re-created.
+31m         Warning   Failed           pod/nginx              Error: secret "my-secret1" not found
+32m         Normal    Pulled           pod/nginx              Successfully pulled image "nginx" in 740.50793ms
+31m         Normal    Pulled           pod/nginx              Successfully pulled image "nginx" in 550.004207ms
+31m         Normal    Pulled           pod/nginx              Successfully pulled image "nginx" in 521.32289ms
+31m         Normal    Pulled           pod/nginx              Successfully pulled image "nginx" in 552.786136ms
+31m         Normal    Pulled           pod/nginx              Successfully pulled image "nginx" in 523.843229ms
+31m         Normal    Pulled           pod/nginx              Successfully pulled image "nginx" in 539.840748ms
+31m         Normal    Pulled           pod/nginx              Successfully pulled image "nginx" in 505.352031ms
+28m         Normal    Scheduled        pod/nginx              Successfully assigned default/nginx to node-2
+28m         Normal    Pulling          pod/nginx              Pulling image "nginx"
+28m         Normal    Started          pod/nginx              Started container nginxsec
+28m         Normal    Created          pod/nginx              Created container nginxsec
+28m         Normal    Pulled           pod/nginx              Successfully pulled image "nginx" in 523.045251ms
+19m         Normal    Scheduled        pod/busybox            Successfully assigned default/busybox to node-1
+19m         Normal    Pulled           pod/busybox            Successfully pulled image "busybox" in 524.154816ms
+19m         Normal    Pulling          pod/busybox            Pulling image "busybox"
+19m         Normal    Created          pod/busybox            Created container busybox
+19m         Normal    Started          pod/busybox            Started container busybox
+9m58s       Normal    Scheduled        pod/nginxrp            Successfully assigned default/nginxrp to node-2
+9m57s       Normal    Pulling          pod/nginxrp            Pulling image "nginx"
+9m55s       Normal    Created          pod/nginxrp            Created container nginx
+9m55s       Normal    Pulled           pod/nginxrp            Successfully pulled image "nginx" in 2.412327229s
+9m54s       Normal    Started          pod/nginxrp            Started container nginx
+7m38s       Normal    Scheduled        pod/nginxlp            Successfully assigned default/nginxlp to node-1
+7m37s       Normal    Created          pod/nginxlp            Created container nginx
+7m37s       Normal    Pulling          pod/nginxlp            Pulling image "nginx"
+7m37s       Normal    Pulled           pod/nginxlp            Successfully pulled image "nginx" in 513.489684ms
+7m36s       Normal    Started          pod/nginxlp            Started container nginx
+107s        Normal    Scheduled        pod/nginxalp           Successfully assigned default/nginxalp to node-1
+105s        Normal    Created          pod/nginxalp           Created container nginx
+105s        Normal    Pulled           pod/nginxalp           Successfully pulled image "nginx" in 585.440094ms
+105s        Normal    Pulling          pod/nginxalp           Pulling image "nginx"
+104s        Normal    Started          pod/nginxalp           Started container nginx

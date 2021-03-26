@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: nginxsa
+  name: nginxsa
+spec:
+  serviceAccountName: myuser
+  containers:
+  - image: nginx
+    name: nginxsa
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Never
+status: {}

@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: nginx-mc
+  name: nginx-mc
+spec:
+  containers:
+  - image: nginx
+    name: nginx-mc
+    ports:
+    - containerPort: 80
+    resources: {}
+    volumeMounts:
+    - mountPath: /usr/share/nginx/html
+      name: cache-volume
+
+  initContainers:
+  - name: init-myservice
+    image: busybox
+    command: ['sh', '-c', "wget -O /work-dir/index.html http://neverssl.com/online"]
+    volumeMounts:
+    - mountPath: /work-dir
+      name: cache-volume
+
+  dnsPolicy: ClusterFirst
+  restartPolicy: Never
+  volumes:
+  - name: cache-volume
+    emptyDir: {}
+status: {}

@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: lvprobenginx
+  name: lvprobenginx
+spec:
+  containers:
+  - image: nginx
+    name: lvprobenginx
+    resources: {}
+    livenessProbe: # our probe
+      initialDelaySeconds: 5 # add this line
+      periodSeconds: 5 # add this line as well
+      exec: # add this line
+        command: # command definition
+        - ls # ls command
+  dnsPolicy: ClusterFirst
+  restartPolicy: Never
+status: {}

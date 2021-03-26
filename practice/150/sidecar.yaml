@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: sidecar
+  name: sidecar
+spec:
+  volumes:
+  - name: shared-data
+    emptyDir: {}
+
+  containers:
+  - args:
+    - /bin/sh
+    - -c
+    - while true; do echo "Hi I am from Main container" >> /var/log/index.html; sleep 5; done
+    image: busybox
+    name: main
+    resources: {}
+    volumeMounts:
+    - name: shared-data
+      mountPath: /var/log
+
+  - args:
+    image: nginx
+    name: sidecar
+    ports:
+      - containerPort: 80
+    volumeMounts:
+    - name: shared-data
+      mountPath: /usr/share/nginx/html
+
+  dnsPolicy: ClusterFirst
+  restartPolicy: Never
+status: {}
